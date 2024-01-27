@@ -26,7 +26,7 @@ while (cantidadUsuarios > 0):
     #realizar operacion del IMC
     imc = peso / estatura ** 2
 
-    #Entregar resultados
+    #Entregar los resultados
     if (edad < 18):
         print ('Aun eres menor, ven con tus padres')
     else:
