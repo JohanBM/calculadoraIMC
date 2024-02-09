@@ -3,9 +3,19 @@ cantidadUsuarios = int(input())
 
 while (cantidadUsuarios > 0):
     #nombre del usuario
-    print ('Ingrese su apellido paterno')
+    aux = True
+    while aux == True:
+        try:
+            apellidoPaterno = str(input('Ingrese su apellido paterno'))
+            buscaApellidoPaterno = [caracter.isalpha() for caracter in apellidoPaterno]
 
-    apellidoPaterno = input()
+            if buscaApellidoPaterno == False:
+                print('Agregue un nombre valido')
+            else:
+                aux = False
+
+        except ValueError:
+            print('Agregue un nombre valido')
 
     print ('Ingrese su apellido materno')
 
@@ -27,12 +37,22 @@ while (cantidadUsuarios > 0):
     imc = peso / estatura ** 2
 
     #Entregar los resultados
-    if (edad < 18):
-        print ('Aun eres menor, ven con tus padres')
-    else:
-        print ('Usted es mayor de edad')
-        print ('Su IMC es: ' + imc)
+    cont = True
+    while == True:
+        try:
+            edad = float(input('Ingrese su edad'))
 
+            if 1 < edad < 18:
+                print ('Aun eres menor, ven con tus padres')
+            elif edad < 1:
+                print ('Ingrese un numero correcto')
+            elif:
+                cont = False
+        
+        except ValueError:
+            print('Ingrese un numero correcto')
+
+#Diagnostico en base al IMC
     if imc >= 0 and imc < 16 :
         diagonostico = 'delgadez severa'
     elif imc >= 16.00 and imc < 17 :
@@ -42,7 +62,7 @@ while (cantidadUsuarios > 0):
     elif imc >= 18.50 and imc < 25 :
         diagonostico = 'peso normal'
     elif imc >= 25.00 and imc < 30:
-        diagonostico = 'obrepeso'
+        diagonostico = 'sobrepeso'
     elif imc >= 30.00 and imc < 35:
         diagonostico = 'obesidad leve'
     elif imc >= 35.00 and imc < 40:
@@ -50,5 +70,10 @@ while (cantidadUsuarios > 0):
     elif imc >= 40.00:
         diagonostico = 'obesidad morbida'
 
-    print (nombreCompleto + ' usted mide ' + estatura + ' metros, y pesa ' + peso + ' kilogramos. Por lo que su IMC es ' + imc + ', cuenta con' + diagonostico)  
-cantidadUsuarios = cantidadUsuarios - 1
+    if (diagonostico is not None):
+      #repr() funciona para concatenar float con string. Este se utiliza dentro de la etiqueta print.
+      print(nombreCompleto + " usted mide " + repr(estatura) + " metros, y pesa " + repr(peso) + " kilogramos. Por lo que su IMC es " + repr(imc) + ", cuenta con " + diagonostico)
+    else:
+      print('No se que pasó')
+
+    cantidadUsuarios = cantidadUsuarios - 1
