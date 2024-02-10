@@ -57,8 +57,6 @@ while (cantidadUsuarios > 0):
         except ValueError:
             print('Agregue un nombre valido')
 
-
-
     #datos para realizar el imc
     cont = True
     while cont == True:
@@ -106,12 +104,9 @@ while (cantidadUsuarios > 0):
 
     #realizar operacion del IMC
     imc = peso / estatura ** 2
-
     #Entregar los resultados
-
     nombreCompleto = nombre + ' ' + apellidoPaterno + ' ' + apellidoMaterno
-
-#Diagnostico en base al IMC
+    #Diagnostico en base al IMC
     if imc >= 0 and imc < 16 :
         diagonostico = 'delgadez severa'
     elif imc >= 16.00 and imc < 17 :
@@ -129,6 +124,7 @@ while (cantidadUsuarios > 0):
     elif imc >= 40.00:
         diagonostico = 'obesidad morbida'
 
+    #Entrega de resultados y diagnostico
     if (diagonostico is not None):
       #repr() funciona para concatenar float con string. Este se utiliza dentro de la etiqueta print.
       print(nombreCompleto + " usted mide " + repr(estatura) + " metros, y pesa " + repr(peso) + " kilogramos. Por lo que su IMC es " + repr(imc) + ", cuenta con " + diagonostico)
