@@ -1,5 +1,15 @@
 print ('Ingrese la cantidad de usuarios a tratar')
-cantidadUsuarios = int(input())
+cont = True
+while cont == True:
+    try:
+        cantidadUsuarios = int(input())
+        if cantidadUsuarios > 0:
+            cont = False
+        else:
+            print('Ingresa un valor mayor a 0')
+    
+    except ValueError:
+        print('Ingresa un número válido')
 
 while (cantidadUsuarios > 0):
     #nombre del usuario
