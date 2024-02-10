@@ -24,11 +24,11 @@
  nos pida de nuevo el dato numerico y lo mismo para la estatura
  y el peso, como para la cantidad de pacientes.
 
-# Despues se agregó un while para para que se repita el codigo
-# dependiendo del numero de pacientes.
+ Despues se agregó un while para para que se repita el codigo
+ dependiendo del numero de pacientes.
 
-# Durante el modulo en el bootcamp he aprendido sobre las 
-# condicionales y los ciclos while. Además para ciertos 
-# problemas de que surgieron durante el proyecto me ayudaron
-# a buscar soluciones adicionales a los temas del mismo, 
-# aprendiendo más sobre el python.
+ Durante el modulo en el bootcamp he aprendido sobre las 
+ condicionales y los ciclos while. Además para ciertos 
+ problemas de que surgieron durante el proyecto me ayudaron
+ a buscar soluciones adicionales a los temas del mismo, 
+ aprendiendo más sobre el python.
