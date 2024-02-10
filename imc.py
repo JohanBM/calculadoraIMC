@@ -6,10 +6,11 @@ while (cantidadUsuarios > 0):
     aux = True
     while aux == True:
         try:
-            apellidoPaterno = str(input('Ingrese su apellido paterno'))
+            apellidoPaterno = str(input('Ingrese su apellido paterno '))
+            #buscar si los caracteres son letras y retornarnos como resultado true or false con la etiqueta any
             buscaApellidoPaterno = [caracter.isalpha() for caracter in apellidoPaterno]
 
-            if buscaApellidoPaterno == False:
+            if not any(buscaApellidoPaterno):
                 print('Agregue un nombre valido')
             else:
                 aux = False
@@ -17,40 +18,89 @@ while (cantidadUsuarios > 0):
         except ValueError:
             print('Agregue un nombre valido')
 
-    print ('Ingrese su apellido materno')
+    aux = True
+    while aux == True:
+        try:
+            apellidoMaterno = str(input('Ingrese su apellido Materno '))
+            #buscar si los caracteres son letras y retornarnos como resultado true or false con la etiqueta any
+            buscaApellidoMaterno = [caracter.isalpha() for caracter in apellidoMaterno]
 
-    apellidoMaterno = input()
+            if not any(buscaApellidoMaterno):
+                print('Agregue un nombre valido')
+            else:
+                aux = False
 
-    print ('Ingrese su nombre')
+        except ValueError:
+            print('Agregue un nombre valido')
 
-    nombre = input()
+    aux = True
+    while aux == True:
+        try:
+            nombre = str(input('Ingrese su(s) nombre(s) '))
+            #buscar si los caracteres son letras y retornarnos como resultado true or false con la etiqueta any
+            buscaNombre = [caracter.isalpha() for caracter in nombre]
 
-    nombreCompleto = nombre + ' ' + apellidoPaterno+ ' ' + apellidoMaterno
+            if not any(buscaNombre):
+                print('Agregue un nombre valido')
+            else:
+                aux = False
+
+        except ValueError:
+            print('Agregue un nombre valido')
+
+
 
     #datos para realizar el imc
-    edad = int (input ('Ingrese su edad: '))
-
-    peso = float (input ('Ingrese su peso: '))
-
-    estatura = float (input ('Ingrese su estatura en metros: '))
-    #realizar operacion del IMC
-    imc = peso / estatura ** 2
-
-    #Entregar los resultados
     cont = True
-    while == True:
+    while cont == True:
         try:
-            edad = float(input('Ingrese su edad'))
+            edad = float(input('Ingrese su edad '))
 
             if 1 < edad < 18:
                 print ('Aun eres menor, ven con tus padres')
             elif edad < 1:
                 print ('Ingrese un numero correcto')
-            elif:
+            else:
                 cont = False
-        
+
         except ValueError:
-            print('Ingrese un numero correcto')
+            print('Agregue un valor valido')
+
+    cont = True
+    while cont == True:
+        try:
+            peso = float(input('Ingrese su peso en KG '))
+
+            if peso >= 1:
+                cont = False
+            else:
+                print ('Ingrese un valor correcto')
+
+        except ValueError:
+            print('Agregue un valor valido')
+
+    cont = True
+    while cont == True:
+        try:
+            estatura = float(input('Ingrese su estatura en metros '))
+
+            if estatura >= 2.5:
+                print ('Ingrese su estatura en metros porfavor')
+            elif estatura <= 0.4:
+                print('Ingrese un valor correcto')
+            else:
+                cont = False
+
+        except ValueError:
+            print('Agregue un valor valido')
+
+
+    #realizar operacion del IMC
+    imc = peso / estatura ** 2
+
+    #Entregar los resultados
+
+    nombreCompleto = nombre + ' ' + apellidoPaterno + ' ' + apellidoMaterno
 
 #Diagnostico en base al IMC
     if imc >= 0 and imc < 16 :
