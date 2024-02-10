@@ -1,8 +1,7 @@
-print ('Ingrese la cantidad de usuarios a tratar')
 cont = True
 while cont == True:
     try:
-        cantidadUsuarios = int(input())
+        cantidadUsuarios = int(input('Ingrese la cantidad de usuarios a tratar '))
         if cantidadUsuarios > 0:
             cont = False
         else:
