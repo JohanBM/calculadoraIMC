@@ -56,7 +56,8 @@ while (cantidadUsuarios > 0):
 
         except ValueError:
             print('Agregue un nombre valido')
-
+    #Unir el nombre
+    nombreCompleto = nombre + ' ' + apellidoPaterno + ' ' + apellidoMaterno
     #datos para realizar el imc
     cont = True
     while cont == True:
@@ -101,11 +102,9 @@ while (cantidadUsuarios > 0):
         except ValueError:
             print('Agregue un valor valido')
 
-
     #realizar operacion del IMC
     imc = peso / estatura ** 2
-    #Entregar los resultados
-    nombreCompleto = nombre + ' ' + apellidoPaterno + ' ' + apellidoMaterno
+    
     #Diagnostico en base al IMC
     if imc >= 0 and imc < 16 :
         diagonostico = 'delgadez severa'
