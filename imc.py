@@ -128,6 +128,6 @@ while (cantidadUsuarios > 0):
       #repr() funciona para concatenar float con string. Este se utiliza dentro de la etiqueta print.
       print(nombreCompleto + " usted mide " + repr(estatura) + " metros, y pesa " + repr(peso) + " kilogramos. Por lo que su IMC es " + repr(imc) + ", cuenta con " + diagonostico)
     else:
-      print('No se que pasó')
+      print('No se que pasó. Intenta de nuevo')
 
     cantidadUsuarios = cantidadUsuarios - 1
